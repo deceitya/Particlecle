@@ -1,0 +1,87 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5f2d2892a44c87f3b7b88845197905e2",
+    "packages": [
+        {
+            "name": "flowy/core",
+            "version": "v3.1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlowyProject/FlowyCore.git",
+                "reference": "2f9be97f9fc84f71d719e7054de7c085a9231493"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlowyProject/FlowyCore/zipball/2f9be97f9fc84f71d719e7054de7c085a9231493",
+                "reference": "2f9be97f9fc84f71d719e7054de7c085a9231493",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.0",
+                "php-64bit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "flowy\\": "src/"
+                },
+                "files": [
+                    "src/Listen.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "description": "Coroutine for event handler, PocketMine-MP",
+            "time": "2019-12-07T05:42:19+00:00"
+        },
+        {
+            "name": "flowy/standard",
+            "version": "v3.1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlowyProject/Standard.git",
+                "reference": "7bc7c4eeb869cf13a4cec73950fc617ffbe66e56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlowyProject/Standard/zipball/7bc7c4eeb869cf13a4cec73950fc617ffbe66e56",
+                "reference": "7bc7c4eeb869cf13a4cec73950fc617ffbe66e56",
+                "shasum": ""
+            },
+            "require": {
+                "flowy/core": ">=3.1.0",
+                "php": ">=7.2.0",
+                "php-64bit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "flowy\\standard\\": "src/"
+                },
+                "files": [
+                    "src/Delay.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "description": "Standard functions for FlowyCore",
+            "time": "2019-12-07T05:35:05+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

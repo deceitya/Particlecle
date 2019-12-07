@@ -1,0 +1,13 @@
+{
+    "name": "deceitya/particlecle",
+    "authors": [
+        {
+            "name": "deceitya",
+            "email": "49361292+deceitya@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "flowy/core": "v3.1.2.1",
+        "flowy/standard": "v3.1.2.1"
+    }
+}

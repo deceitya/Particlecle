@@ -2,44 +2,38 @@
 namespace Deceitya\Particlecle;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\scheduler\Task;
-use pocketmine\level\Position;
 use pocketmine\level\particle\DustParticle;
+use flowy\Flowy;
+use flowy\standard\DelayTask;
+use flowy\standard\DelayCallbackEvent;
+use function flowy\listen;
 
 class Main extends PluginBase
 {
     public function onEnable()
     {
-        $this->getScheduler()->scheduleRepeatingTask(new ClecleTask($this->getServer()->getDefaultLevel()->getSafeSpawn()), 2);
-    }
-}
+        require_once($this->getFile() . 'vendor/autoload.php');
 
-class ClecleTask extends Task
-{
-    private $pos;
-    private $h = 0.0;
-    private $rad = 0;
+        mt_srand();
 
-    public function __construct(Position $pos)
-    {
-        $this->pos = $pos;
-    }
+        Flowy::run($this, \Closure::fromCallable(function () {
+            $original = $this->getServer()->getDefaultLevel()->getSafeSpawn();
+            $level = $original->getLevel();
+            while (true) {
+                $y = 0;
+                for ($rad = 0; $rad < 4 * M_PI; $rad += M_PI / 18) {
+                    $level->addParticle(new DustParticle($original->add(sin($rad), $y, cos($rad)), mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255)));
+                    $level->addParticle(new DustParticle($original->add(sin($rad + M_PI), $y, cos($rad + M_PI)), mt_rand(0, 255), mt_rand(0, 255), mt_rand(0, 255)));
 
-    public function onRun(int $currentTick)
-    {
-        if ($this->h > 4.0) {
-            $this->h = 0.0;
-        }
-        if ($this->rad >= 2 * M_PI) {
-            $this->rad = 0;
-        }
+                    $y += 0.04;
 
-        $pos = $this->pos->add(sin($this->rad), $this->h, cos($this->rad));
-        $pos2 = $this->pos->add(sin($this->rad + M_PI), $this->h, cos($this->rad + M_PI));
-        $this->pos->level->addParticle(new DustParticle($pos, 255, 255, 255));
-        $this->pos->level->addParticle(new DustParticle($pos2, 255, 255, 255));
-
-        $this->h += 0.05;
-        $this->rad += 0.174533;
+                    $task = DelayTask::create();
+                    $this->getScheduler()->scheduleDelayedTask($task, 1);
+                    yield listen(DelayCallbackEvent::class)->filter(function ($ev) use ($task) {
+                        return $ev->getDelayId() === $task->getDelayId();
+                    });
+                }
+            }
+        }));
     }
 }
