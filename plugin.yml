@@ -1,0 +1,8 @@
+name: Particlecle
+main: Deceitya\Particlecle\Main
+version: 1.0.0
+api: 3.10.0
+load: POSTWORLD
+author: deceitya
+description: ぱーてぃくるくる
+website: https://github.com/deceitya/Particlecle
