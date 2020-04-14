@@ -8,6 +8,6 @@
     ],
     "require": {
         "flowy/core": "v3.1.2.1",
-        "flowy/standard": "v3.1.2.1"
+        "flowy/standard": "dev-master"
     }
 }

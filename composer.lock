@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f2d2892a44c87f3b7b88845197905e2",
+    "content-hash": "65e31289ba65e15f4958300583c5fb11",
     "packages": [
         {
             "name": "flowy/core",
@@ -42,16 +42,16 @@
         },
         {
             "name": "flowy/standard",
-            "version": "v3.1.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FlowyProject/Standard.git",
-                "reference": "7bc7c4eeb869cf13a4cec73950fc617ffbe66e56"
+                "reference": "b942f58eaa79661b5e8b7a5524877f789a549fde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FlowyProject/Standard/zipball/7bc7c4eeb869cf13a4cec73950fc617ffbe66e56",
-                "reference": "7bc7c4eeb869cf13a4cec73950fc617ffbe66e56",
+                "url": "https://api.github.com/repos/FlowyProject/Standard/zipball/b942f58eaa79661b5e8b7a5524877f789a549fde",
+                "reference": "b942f58eaa79661b5e8b7a5524877f789a549fde",
                 "shasum": ""
             },
             "require": {
@@ -73,13 +73,15 @@
                 "LGPL-2.1"
             ],
             "description": "Standard functions for FlowyCore",
-            "time": "2019-12-07T05:35:05+00:00"
+            "time": "2019-12-08T04:39:21+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "flowy/standard": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
